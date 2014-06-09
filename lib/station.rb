@@ -7,7 +7,7 @@ class Station
 	
 	def initialize(options = {})
 
-		self.capacity = options.fetch(:capacity, capacity)
+		self.capacity=(options.fetch(:capacity, self.capacity))
 
 	end
 

@@ -6,7 +6,7 @@ class Garage
 
 	def initialize(options = {})
 
-		self.capacity = options.fetch(:capacity, capacity)
+		self.capacity=(options.fetch(:capacity, self.capacity))
 		# self.bike_count = options.fetch(:bike_count, bike_count)
 		@docked_bikes ||= 0
 

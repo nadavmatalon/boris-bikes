@@ -43,7 +43,7 @@ describe BikeContainer do
 	end
 
 
-	it "should not throw error if :release is used without an argument" do
+	it "should not throw error if release method is used without an argument" do
 
 		expect(holder.release()).not_to raise_error
 	end
