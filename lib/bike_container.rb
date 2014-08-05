@@ -1,70 +1,41 @@
 module BikeContainer
 
-  DEFAULT_CAPACITY = 10
+    DEFAULT_CAPACITY = 10
 
-  def bikes
+    def bikes
+        @bikes ||= []
+        @docked_bikes ||= 0
+        @bikes
+    end
 
-    @bikes ||= []
-    @docked_bikes ||= 0
-    return @bikes
+    def capacity
+        @capacity ||= DEFAULT_CAPACITY
+    end
 
-  end
+    def capacity=(value)
+        @capacity = value
+    end
 
+    def bike_count
+        bikes.count
+    end
 
-  def capacity    
+    def dock(bike = nil)
+        raise "Holder is full" if full?
+        bikes << bike if ((bike.is_a?Bike) && (!bikes.include?(bike)))
+        @docked_bikes = bikes.count
+    end
 
-    @capacity ||= DEFAULT_CAPACITY
+    def release(bike = nil)
+        bikes.delete(bike) if bikes.include?(bike)
+        @docked_bikes = bikes.count
+    end
 
-  end
+    def full?
+        bike_count == capacity
+    end
 
-
-  def capacity=(value)    
-
-    @capacity = value
-
-  end
-
-
-  def bike_count
-
-    bikes.count
-
-  end
-
-
-
-  def dock(bike = nil)
-
-    raise "Holder is full" if full?
-    bikes << bike if ((bike.is_a?Bike) && (!bikes.include?(bike)))
-    @docked_bikes = bikes.count
-
-  end
-
-
-  def release(bike = nil)
-
-    bikes.delete(bike) if bikes.include?(bike)
-    @docked_bikes = bikes.count
-
-  end
-
-
-  def full?
-
-    bike_count == capacity
-
-  end
-
-
-  def available_bikes
-
-    bikes.reject {|bike| bike.broken? }
-
-  end
-
-
+    def available_bikes
+        bikes.reject {|bike| bike.broken?}
+    end
 end
-
-
-
