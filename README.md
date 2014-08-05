@@ -1,4 +1,4 @@
-<h2>Boris Bikes<h2>
+<h1>Boris Bikes</h1>
 
 <h3>General Description</h3>
 
