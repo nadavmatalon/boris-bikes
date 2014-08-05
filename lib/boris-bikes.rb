@@ -5,7 +5,6 @@ require_relative 'garage.rb'
 require_relative 'person.rb'
 require_relative 'bike_container.rb'
 
-
 @bike = Bike.new
 @bike_1 = Bike.new
 @bike_2 = Bike.new
@@ -33,7 +32,3 @@ require_relative 'bike_container.rb'
 @person = Person.new
 @person_1 = Person.new
 @person_2 = Person.new
-
-
-
-
