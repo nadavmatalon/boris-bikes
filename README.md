@@ -9,6 +9,9 @@
 * [Testing](#testing)
 * [License](#license)
 
+
+##Screenshots
+
 <table>
 	<tr>
 		<td align="center" width="200px">
@@ -19,11 +22,6 @@
 		<td align="center" width="200px">
 			<a href="https://raw.githubusercontent.com/nadavmatalon/boris-bikes/master/images/boris_bikes_2.jpg">
 				<img src="images/boris_bikes_2.jpg" height="92px" />
-			</a>
-		</td>
-		<td align="center" width="200px">
-			<a href="https://raw.githubusercontent.com/nadavmatalon/boris-bikes/master/images/boris_bikes_3.jpg">
-				<img src="images/boris_bikes.jpg" height="92px" />
 			</a>
 		</td>
 	</tr>
@@ -132,7 +130,7 @@ To run the code, clone the repo to a local folder and in terminal:
 ```bash
 $> cd boris-bikes
 $> irb
-$> require './lib/boris-bikes.rb'
+>> require './lib/boris-bikes.rb'
 ```
 
 ##Testing
