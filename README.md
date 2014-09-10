@@ -1,21 +1,74 @@
-<h1>Boris Bikes</h1>
+#Boris Bikes
 
-<h3>General Description</h3>
+##Table of Contents
 
-<p>This app consists of a simple system for managing Boris Bikes in London. The system keeps track of a number of docking stations, bikes and the people who rent them. It will allow a person to rent a bike and return it to a docking station. Occasionally the bikes may be broken by people and then they become unavailable for rental. There are also garages that can fix broken bikes and vans that move the bikes between the docking stations and garages.</p>
+* [Screenshots](#screenshots)
+* [General Description](#general-description)
+* [Functional Description](#functional-description)
+* [How to Run](#how-to-run)
+* [Testing](#testing)
+* [License](#license)
 
-<p>The app was written in Ruby according to TDD</p>
+<table>
+	<tr>
+		<td align="center" width="200px">
+			<a href="https://raw.githubusercontent.com/nadavmatalon/boris-bikes/master/images/boris_bikes_1.jpg">
+				<img src="images/boris_bikes_1.jpg" height="92px" />
+			</a>
+		</td>
+		<td align="center" width="200px">
+			<a href="https://raw.githubusercontent.com/nadavmatalon/boris-bikes/master/images/boris_bikes_2.jpg">
+				<img src="images/boris_bikes_2.jpg" height="92px" />
+			</a>
+		</td>
+		<td align="center" width="200px">
+			<a href="https://raw.githubusercontent.com/nadavmatalon/boris-bikes/master/images/boris_bikes_3.jpg">
+				<img src="images/boris_bikes.jpg" height="92px" />
+			</a>
+		</td>
+	</tr>
+</table>
 
 
-<h4>How to Run</h3>
+##General Description
 
-<p>First, run these command in terminal:</p>
-<p>$ irb</p>
-<p>$ require './lib/boris-bikes.rb'</p>
+This app consists of a simple system simulation for managing 
+[Boris Bikes](http://en.wikipedia.org/wiki/Barclays_Cycle_Hire) in London. 
 
-<p>After that you can apply the following methods:</p>
+The code was written in [Ruby](https://www.ruby-lang.org/en/) according to 
+[TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
+(tests created with [Rspec](http://rspec.info/)).
 
-<h4><strong>Bike</strong></h4>
+
+##Functional Description
+
+The management system keeps track of a number of `bikes` and the `people` who rent them, 
+as well as `docking stations`, `garages`, and `vans` to move them around.
+
+The system's functionality includes:
+* A __person__ can rent a bike and then return it to a __docking station__. 
+* Occasionally a __bike__ may be __broken__ by a __person__ and then that __bike__
+  becomes unavailable for rental (but can still be returned to a __docking station__).
+* __Garages__ can fix __broken bikes__.
+* __Vans__ move the __bikes__ between the __docking stations__ and __garages__.
+* An implementation of a __bike-container__ module used by the __docking station__,
+  __garage__, and __van__ classes.
+
+After installation (see: [How to Run]((#how-to-run)) section below), the following methods 
+are available for each class:
+
+###Person
+
+| Methods                   | Description                                                        |
+|---------------------------|--------------------------------------------------------------------|
+| Person.new                | Creates a new instance of a person                                 |
+| .have_bike?               | returns boolean (true => has bike/s ; false => doesn't have bike/s |
+| .break_bike               | breaks the person's bike                                           |
+| .rent_bike_from (station) | rents a bike from a docking station                                |
+| .return_bike_to (station) | returns the bike to a docking station                              |
+
+
+###Bike
 
 | Methods  | Description                                            |
 |----------|--------------------------------------------------------|
@@ -24,7 +77,8 @@
 | .brake!  | brakes the bike                                        |
 | .fix!    | fixes the bike                                         |
 
-<h4><strong>Station</strong></h4>
+
+###Station
 
 | Methods          | Description                                                                     |
 |------------------|---------------------------------------------------------------------------------|
@@ -38,7 +92,8 @@
 | .full?           | returns a boolean (true => station full ; false => station not full             |
 | .available_bikes | returns an array of all available (i.e. not broken) bikes docked in the station |
 
-<h4><strong>Garage</strong></h4>
+
+###Garage
 
 | Methods               | Description                                                                  |
 |-----------------------|------------------------------------------------------------------------------|
@@ -54,7 +109,8 @@
 | .full?                | returns a boolean (true => garage full ; false => garage not full            |
 | .available_bikes      | returns an array of all available (i.e. not broken) bikes held in the garage |
 
-<h4><strong>Van</strong></h4>
+
+###Van
 
 | Methods         | Description                                                 |
 |-----------------|-------------------------------------------------------------|
@@ -67,21 +123,30 @@
 | .release (bike) | releases a docked bike from the van                         |
 | .full?          | returns a boolean (true => van full ; false => van not full |
 
-<h4><strong>Person</strong></h4>
-
-| Methods                   | Description                                                        |
-|---------------------------|--------------------------------------------------------------------|
-| Person.new                | Creates a new instance of a person                                 |
-| .have_bike?               | returns boolean (true => has bike/s ; false => doesn't have bike/s |
-| .break_bike               | breaks the person's bike                                           |
-| .rent_bike_from (station) | rents a bike from a docking station                                |
-| .return_bike_to (station) | returns the bike to a docking station                              |
 
 
-<h3>Testing</h3>
+##How to Run
 
-<p>Tests were written with Rspec.
+To run the code, clone the repo to a local folder and in terminal:
 
-<p>To run the tests: $ rspec</p>
+```bash
+$> cd boris-bikes
+$> irb
+$> require './lib/boris-bikes.rb'
+```
 
-<p>Rspec version: 3.0.3</p>
+##Testing
+
+Tests were written with [Rspec](http://rspec.info/) (3.0.3).
+
+To run the tests in terminal: 
+
+```bash
+$> cd boris-bikes
+$> rspec
+```
+
+##License
+
+<p>Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.</p>
+

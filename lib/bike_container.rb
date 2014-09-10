@@ -21,14 +21,24 @@ module BikeContainer
     end
 
     def dock(bike = nil)
-        raise "Holder is full" if full?
-        bikes << bike if ((bike.is_a?Bike) && (!bikes.include?(bike)))
-        @docked_bikes = bikes.count
+        if full? || bikes.include?(bike) || bike.class != Bike
+            "Can't dock bike"
+        else
+            bikes << bike
+            @docked_bikes = bikes.count
+            "Docked bike"
+        end
     end
 
-    def release(bike = nil)
-        bikes.delete(bike) if bikes.include?(bike)
-        @docked_bikes = bikes.count
+    def release_bike
+        if bikes.count > 0
+            released_bike = bikes.first
+            @bikes.shift
+            @docked_bikes = bikes.count
+            released_bike
+        else
+            "No bikes"
+        end
     end
 
     def full?

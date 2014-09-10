@@ -21,18 +21,14 @@ describe BikeContainer do
 
 	it "should release a bike" do
 		holder.dock(bike)
-		holder.release(bike)
+		holder.release_bike
 		expect(holder.bike_count).to eq 0
 	end
 
-	it "should not release a bike that isn't already doceked" do
+	it "should not release a bike that isn't already docked" do
 		bike = Bike.new
-		holder.release(bike)
+		holder.release_bike
 		expect(holder.bikes).to eq []
-	end
-
-	it "should not throw error if release method is used without an argument" do
-		expect{holder.release()}.not_to raise_error
 	end
 
 	it "should not throw error if :dock is used without an argument" do
@@ -52,7 +48,7 @@ describe BikeContainer do
 
 	it "should not accept a bike if it's full" do
 		fill_holder(holder)
-		expect(lambda{holder.dock(Bike.new)}).to raise_error(RuntimeError)
+		expect(holder.dock(Bike.new)).to eq "Can't dock bike" 
 	end
 
 	it "should not allow docking the same bike twice" do

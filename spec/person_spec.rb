@@ -40,9 +40,9 @@ describe Person do
 	end
 
 	it "can return bike to station" do
-		bike = double :bike 
-		station = double :station, get_back_bike: nil
+		bike = Bike.new
 		person = Person.new(bike)
+		station = Station.new
 		person.return_bike_to(station)
 		expect(person.have_bike?).to be false
 	end
