@@ -6,7 +6,6 @@ class Garage
 
 	def initialize(options = {})
 		self.capacity=(options.fetch(:capacity, self.capacity))
-		@docked_bikes ||= 0
 	end
 
 	def fix(bike)

@@ -4,8 +4,6 @@ module BikeContainer
 
     def bikes
         @bikes ||= []
-        @docked_bikes ||= 0
-        @bikes
     end
 
     def capacity
@@ -25,7 +23,6 @@ module BikeContainer
             "Can't dock bike"
         else
             bikes << bike
-            @docked_bikes = bikes.count
             "Docked bike"
         end
     end
@@ -34,7 +31,6 @@ module BikeContainer
         if bike_count > 0
             released_bike = bikes.first
             @bikes.shift
-            @docked_bikes = bike_count
             released_bike
         else
             "No bikes"
