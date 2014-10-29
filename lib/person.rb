@@ -6,7 +6,7 @@ class Person
 	end
 
 	def have_bike?
-		!@bike.nil?
+		@bike != nil
 	end
 
 	def break_bike
@@ -14,7 +14,9 @@ class Person
 	end
 
 	def rent_bike_from station
-		if @bike.nil?
+		if have_bike?
+			"You already have a bike"
+		else
 			result = station.release_bike
 			if result != "No bikes"
 			 	@bike = result 
@@ -22,24 +24,21 @@ class Person
 			 else
 			 	"No bikes for hire"
 			 end
-		else
-			"You already have a bike"
 		end
 	end
 
 	def return_bike_to station
-		if have_bike?
-			result = station.dock @bike
-			if !result.nil?
-			 	message = !@bike.broken? ? "Bike returned in good condition" : "You returned a broken bike!"
-			 	@bike = nil
-			 	message
-			 else
-			   "Station is full"
-			end
-		else
+		if !have_bike?
 			"You need to hire a bike first"
+		elsif station.full?
+			"Station is full"
+		else
+			bike_condition = !@bike.broken? ? "Bike returned in good condition" : "You returned a broken bike!"
+			station.dock @bike
+			@bike = nil
+			bike_condition
 		end
 	end
+
 end
 
