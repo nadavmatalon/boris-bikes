@@ -89,8 +89,8 @@ are available for each class:
 |----------|--------------------------------------------------------|
 | Bike.new | Creates a new instance of a bike                       |
 | .broken? | returns boolean (true => broken ; false => not broken) |
-| .brake!  | brakes the bike                                        |
-| .fix!    | fixes the bike                                         |
+| .break   | breaks the bike                                        |
+| .fix     | fixes the bike                                         |
 
 
 ###Station
