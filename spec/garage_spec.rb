@@ -2,28 +2,28 @@ require "garage.rb"
 
 describe "Garage" do 
 
-	let(:garage) { Garage.new(:capacity => 20) }
+	let(:garage) { Garage.new }
 
 	let(:bike) { Bike.new }
 
-	it "should allow setting default capacity on initialising" do
-		expect(garage.capacity).to eq (20)
+	it "should have default capacity of 10 bikes" do
+		expect(garage.capacity).to eq 10
 	end
 
-	it "should fix broken bikes" do
+	it "allows setting of it's capacity on initialization" do
+		expect(Garage.new(capacity: 20).capacity).to eq 20
+	end
+
+	it "can fix a broken bike" do
 		bike.break
 		garage.dock bike
 		garage.fix bike
 		expect(bike.broken?).to be false
 	end
 
-	it "should fix all broken bikes" do
-		bike_1 = Bike.new(true)
-		bike_2 = Bike.new
-		bike_3 = Bike.new(true)
-		garage.dock bike_1
-		garage.dock bike_2
-		garage.dock bike_3
+	it "can fix all broken bikes at once" do
+		bikes = [Bike.new(true), Bike.new, Bike.new(true)]
+		bikes.each { |bike| garage.dock bike }
 		garage.fix_all_broken_bikes	
 		garage.bikes.each do |bike|
 			expect(bike).not_to be_broken
