@@ -27,6 +27,7 @@ class Station
 	end
 
 	def dock_broken_bikes_on van
+		broken_bikes = select_broken_bikes
 		@bikes -= broken_bikes
 		broken_bikes.each { |bike| van.dock bike }
 	end
