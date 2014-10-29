@@ -12,7 +12,7 @@ class Garage
 
 	def fix(bike)
 		if bike.broken?
-			bike.fix!
+			bike.fix
 		end
 	end
 

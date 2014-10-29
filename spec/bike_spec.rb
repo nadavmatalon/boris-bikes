@@ -9,12 +9,12 @@ describe Bike do
 	end
 
 	it "can break" do
-		bike.break!
+		bike.break
 		expect(bike.broken?).to be true
 	end
 
 	it "can be fixed" do
-		bike.break!.fix!
+		bike.break.fix
 		expect(bike.broken?).to be false
 	end
 end

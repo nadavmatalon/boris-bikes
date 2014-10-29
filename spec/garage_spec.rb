@@ -11,7 +11,7 @@ describe "Garage" do
 	end
 
 	it "should fix broken bikes" do
-		bike.break!
+		bike.break
 		garage.dock bike
 		garage.fix bike
 		expect(bike.broken?).to be false

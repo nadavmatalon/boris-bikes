@@ -10,7 +10,7 @@ class Person
 	end
 
 	def break_bike
-		 @bike.break!
+		 @bike.break
 	end
 
 	def rent_bike_from station

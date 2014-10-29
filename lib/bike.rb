@@ -2,32 +2,21 @@
 class Bike
 
 	def initialize (broken = false)
-
 		@broken = broken
-
 	end
-
 
 	def broken?
-
 		@broken
-
 	end
 
-
-	def break!
-
+	def break
 		@broken = true
-		self				#refers to the instance of the class		
-
+		self	
 	end
 
-
-	def fix!
-
+	def fix
 		@broken = false
-		self				#refers to the instance of the class		
-
+		self	
 	end
 
 end

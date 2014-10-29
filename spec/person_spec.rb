@@ -15,7 +15,7 @@ describe Person do
 
 	it "can break the bike" do
 		bike = double :bike    				
-		expect(bike).to receive(:break!)
+		expect(bike).to receive(:break)
 		person = Person.new(bike)
 		person.break_bike
 	end
