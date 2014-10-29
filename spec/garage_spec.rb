@@ -6,8 +6,8 @@ describe "Garage" do
 
 	let(:bike) { Bike.new }
 
-	it "should allow setting default capacity on initialising" do  
-    	expect(garage.capacity).to eq (20)
+	it "should allow setting default capacity on initialising" do
+		expect(garage.capacity).to eq (20)
 	end
 
 	it "should fix broken bikes" do
