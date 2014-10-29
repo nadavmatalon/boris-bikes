@@ -2,7 +2,7 @@ require "person"
 
 describe Person do
 
-	let(:person) {Person.new}
+	let(:person) { Person.new }
 
 	it "initially has no bike" do
 		expect(person.have_bike?).to be false
@@ -15,8 +15,8 @@ describe Person do
 
 	it "can break the bike" do
 		bike = double :bike    				
-		expect(bike).to receive(:break)
 		person = Person.new(bike)
+		expect(bike).to receive(:break)
 		person.break_bike
 	end
 
