@@ -30,16 +30,18 @@
 
 ##General Description
 
-This app was written during week 3 of the course at 
-[Makers Academy](http://www.makersacademy.com/) and consists of a simple system simulation 
-for managing [Boris Bikes](http://en.wikipedia.org/wiki/Barclays_Cycle_Hire) in London. 
+This terminal-based app was pair-programmed in 
+[Ruby](https://www.ruby-lang.org/en/) (2.1.1) according to 
+[TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
+(testing done with [Rspec](http://rspec.info/)) during week 3 of the course at 
+[Makers Academy](http://www.makersacademy.com/).
+
+The app consists of a simple system simulation for managing 
+[Boris Bikes](http://en.wikipedia.org/wiki/Barclays_Cycle_Hire) in London. 
 
 The management system keeps track of a number of `bikes` and the `people` who rent them, 
-as well as `docking stations`, `garages`, and `vans` to move them around.
-
-The code was written in [Ruby](https://www.ruby-lang.org/en/) (2.1.1) according to 
-[TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
-(testing done with [Rspec](http://rspec.info/)).
+as well as `docking stations`, `garages`, and `vans` to move bikes around, fix them when 
+needed, rent them out, and log their return.
 
 
 ##How to Run
