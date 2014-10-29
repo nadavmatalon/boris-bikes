@@ -31,10 +31,10 @@ module BikeContainer
     end
 
     def release_bike
-        if bikes.count > 0
+        if bike_count > 0
             released_bike = bikes.first
             @bikes.shift
-            @docked_bikes = bikes.count
+            @docked_bikes = bike_count
             released_bike
         else
             "No bikes"
