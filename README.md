@@ -4,8 +4,8 @@
 
 * [Screenshots](#screenshots)
 * [General Description](#general-description)
-* [Functional Description](#functional-description)
 * [How to Run](#how-to-run)
+* [Functional Description](#functional-description)
 * [Testing](#testing)
 * [License](#license)
 
@@ -33,15 +33,29 @@
 This app consists of a simple system simulation for managing 
 [Boris Bikes](http://en.wikipedia.org/wiki/Barclays_Cycle_Hire) in London. 
 
-The code was written in [Ruby](https://www.ruby-lang.org/en/) according to 
+The management system keeps track of a number of `bikes` and the `people` who rent them, 
+as well as `docking stations`, `garages`, and `vans` to move them around.
+
+The code was written in [Ruby](https://www.ruby-lang.org/en/) (2.1.1) according to 
 [TDD](http://en.wikipedia.org/wiki/Test-driven_development) 
-(tests created with [Rspec](http://rspec.info/)).
+(testing done with [Rspec](http://rspec.info/)).
+
+
+##How to Run
+
+Clone the repo to a local folder and in terminal run:
+
+```bash
+$> cd boris-bikes
+$> irb
+>> require './lib/boris-bikes.rb'
+```
+
+You can now use the various methods described in the __Functional Description__ 
+section below.
 
 
 ##Functional Description
-
-The management system keeps track of a number of `bikes` and the `people` who rent them, 
-as well as `docking stations`, `garages`, and `vans` to move them around.
 
 The system's functionality includes:
 * A __person__ can rent a bike and then return it to a __docking station__. 
@@ -122,20 +136,9 @@ are available for each class:
 | .full?          | returns a boolean (true => van full ; false => van not full |
 
 
-
-##How to Run
-
-To run the code, clone the repo to a local folder and in terminal:
-
-```bash
-$> cd boris-bikes
-$> irb
->> require './lib/boris-bikes.rb'
-```
-
 ##Testing
 
-Tests were written with [Rspec](http://rspec.info/) (3.0.3).
+Tests were written with [Rspec](http://rspec.info/) (3.1.7).
 
 To run the tests in terminal: 
 
