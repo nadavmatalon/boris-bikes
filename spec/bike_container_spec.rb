@@ -14,9 +14,9 @@ describe BikeContainer do
 	end
 
 	it "should accept a bike" do
-    	expect(holder.bike_count).to eq(0)
-    	holder.dock(bike)    
-    	expect(holder.bike_count).to eq(1)
+		expect(holder.bike_count).to eq(0)
+		holder.dock(bike)
+		expect(holder.bike_count).to eq(1)
 	end
 
 	it "should release a bike" do
