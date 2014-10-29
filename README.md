@@ -1,5 +1,7 @@
 #Boris Bikes
 
+[![Code Climate](https://codeclimate.com/github/nadavmatalon/boris-bikes/badges/gpa.svg)](https://codeclimate.com/github/nadavmatalon/boris-bikes)
+
 ##Table of Contents
 
 * [Screenshots](#screenshots)
