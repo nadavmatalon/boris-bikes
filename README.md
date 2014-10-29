@@ -30,8 +30,9 @@
 
 ##General Description
 
-This app consists of a simple system simulation for managing 
-[Boris Bikes](http://en.wikipedia.org/wiki/Barclays_Cycle_Hire) in London. 
+This app was written during week 3 of the course at 
+[Makers Academy](http://www.makersacademy.com/) and consists of a simple system simulation 
+for managing [Boris Bikes](http://en.wikipedia.org/wiki/Barclays_Cycle_Hire) in London. 
 
 The management system keeps track of a number of `bikes` and the `people` who rent them, 
 as well as `docking stations`, `garages`, and `vans` to move them around.
