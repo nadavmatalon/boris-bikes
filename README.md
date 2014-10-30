@@ -52,6 +52,7 @@ Clone the repo to a local folder and in terminal run:
 
 ```bash
 $> cd boris-bikes
+$> bundle install
 $> irb
 >> require './lib/boris-bikes.rb'
 ```
